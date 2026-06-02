@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Centro Espírita Amor ao Próximo</title>
-  <link rel="stylesheet" href="/CSS/style.css">
+  <link rel="stylesheet" href="CSS/style.css">
 </head>
 <body>
 
@@ -93,9 +93,31 @@
     <button>Explorar Timeline</button>
   </section>
 
+  <main id="library-app" class="library-app">
+    <aside class="sidebar">
+      <div class="brand">Biblioteca Digital</div>
+      <nav>
+        <button data-view="catalog" class="active">Catálogo</button>
+      </nav>
+      <div class="search">
+        <input id="searchInput" type="search" placeholder="Pesquisar por título, autor ou categoria">
+      </div>
+      <small class="info">Navegue pelo acervo. Ações administrativas serão disponibilizadas no painel do administrador.</small>
+    </aside>
+
+    <section class="main">
+      <div id="catalogView" class="view">
+        <h2>Catálogo</h2>
+        <div id="catalogList" class="catalog-list"></div>
+      </div>
+
+    </section>
+  </main>
+
   <footer>
     © 2025 Centro Espírita Amor ao Próximo - Juiz de Fora
   </footer>
 
+  <script src="JS/app.js"></script>
 </body>
 </html>
