@@ -46,4 +46,59 @@ function sampleBooks(){
 function escapeHtml(str){ if(!str) return ''; return String(str).replace(/[&"'<>]/g, s=>({"&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;"}[s])) }
 
 // expose for future admin tooling
-window.__lib_books = books
+window.__lib_books = books;
+
+// Script to toggle mobile navigation
+(function(){
+  const toggle = document.querySelector('.nav-toggle');
+  const nav = document.getElementById('mainNav');
+  if(!toggle || !nav) return;
+
+  function openNav(){
+    nav.classList.add('open');
+    toggle.setAttribute('aria-expanded','true');
+  }
+  function closeNav(){
+    nav.classList.remove('open');
+    toggle.setAttribute('aria-expanded','false');
+  }
+
+  toggle.addEventListener('click', function(e){
+    if(nav.classList.contains('open')) closeNav(); else openNav();
+  });
+
+  // close when clicking a link
+  nav.addEventListener('click', function(e){
+    if(e.target.tagName === 'A') closeNav();
+  });
+
+  // close when clicking outside
+  document.addEventListener('click', function(e){
+    if(!nav.contains(e.target) && !toggle.contains(e.target)) closeNav();
+  });
+})();
+
+// Sidebar toggle for small screens
+(function(){
+  const sidebarToggle = document.querySelector('.sidebar-toggle');
+  const sidebar = document.getElementById('sidebar');
+  if(!sidebarToggle || !sidebar) return;
+
+  function openSidebar(){
+    sidebar.classList.add('open');
+    sidebarToggle.setAttribute('aria-expanded','true');
+  }
+  function closeSidebar(){
+    sidebar.classList.remove('open');
+    sidebarToggle.setAttribute('aria-expanded','false');
+  }
+
+  sidebarToggle.addEventListener('click', function(e){
+    if(sidebar.classList.contains('open')) closeSidebar(); else openSidebar();
+  });
+
+  // Close on outside click
+  document.addEventListener('click', function(e){
+    if(!sidebar.contains(e.target) && !sidebarToggle.contains(e.target)) closeSidebar();
+  });
+})();

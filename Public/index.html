@@ -9,9 +9,22 @@
 <body>
 
   <header>
-    <div style="display:flex; align-items:center; gap:10px;">
+    <div class="space">
+      <div style="display:flex; align-items:center; gap:10px;">
       <img src="logo-ceap.jfif" alt="Logo CEAP">
       <h1>Centro Espírita Amor ao Próximo</h1>
+    </div>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="mainNav">
+      <span class="visually-hidden">Abrir menu</span>
+      &#9776;
+    </button>
+    <nav class="main-nav" id="mainNav">
+      <ul>
+        <li><a href="#sobre-ceap">Sobre CEAP</a></li>
+        <li><a href="#biblioteca">Biblioteca</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
     </div>
   </header>
 
@@ -21,7 +34,7 @@
     <button>Conheça Nossa História</button>
   </section>
 
-  <section class="section">
+  <section class="section" id="biblioteca">
     <h3>Biblioteca Digital</h3>
     <div class="livros">
       <div class="card">
@@ -85,7 +98,7 @@
     </div>
   </section>
 
-  <section class="historia">
+  <section class="historia" id="sobre-ceap">
     <div class="historia-text">
       <h4>Nossa História</h4>
       <p>Conheça os 50 anos de dedicação ao próximo e transformação social através da educação e do amor.</p>
@@ -94,7 +107,8 @@
   </section>
 
   <main id="library-app" class="library-app">
-    <aside class="sidebar">
+    <button class="sidebar-toggle" aria-expanded="true" aria-controls="sidebar">☰ Biblioteca</button>
+    <aside id="sidebar" class="sidebar">
       <div class="brand">Biblioteca Digital</div>
       <nav>
         <button data-view="catalog" class="active">Catálogo</button>
@@ -114,7 +128,7 @@
     </section>
   </main>
 
-  <footer>
+  <footer id="contato">
     © 2025 Centro Espírita Amor ao Próximo - Juiz de Fora
   </footer>
 
